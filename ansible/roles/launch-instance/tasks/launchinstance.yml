@@ -3,17 +3,17 @@
     key_name: "{{key_name}}"
     profile: "{{profile}}"
     region: "{{aws_region}}"
-    instance_type: t2.micro
+    instance_type: t2.small
     image: "{{ image_id }}"
     wait: yes
     group_id: ["{{ ec2_vpc_sgs.security_groups[0].group_id }}"]
     count_tag:
-      Name: "Jenkins_instance"
+      Name: "jenkins_instance"
     exact_count: "{{ number_of_instance}}"
     vpc_subnet_id: "{{ ec2_vpc_subnet.subnets[0].subnet_id }}"
     instance_tags:
       app: jenkins
-      Name: Jenkins_instance
+      Name: jenkins_instance
     assign_public_ip: yes
   register: ec2_details
 
