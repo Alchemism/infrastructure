@@ -1,2 +1,3 @@
 ansible/extra_vars.json
 ansible/hosts
+.idea/workspace.xml
